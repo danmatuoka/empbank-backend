@@ -4,8 +4,6 @@ import { User } from './entities/user.entity';
 import { Transaction } from './entities/transaction.entity';
 import { createTables1675962613130 } from './migrations/1675962613130-createTables';
 
-createTables1675962613130;
-
 const AppDataSource = new DataSource(
   process.env.NODE_ENV === 'test'
     ? {
