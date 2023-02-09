@@ -4,3 +4,5 @@ export interface IUser {
   email: string;
   password: string;
 }
+
+export type IUserLogin = Omit<IUser, 'id' | 'name'>;
