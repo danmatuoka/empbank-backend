@@ -10,7 +10,7 @@ const AppDataSource = new DataSource(
         type: 'sqlite',
         database: ':memory:',
         synchronize: true,
-        entities: ['src/entities/*.ts'],
+        entities: [User, Transaction],
       }
     : {
         type: 'postgres',
