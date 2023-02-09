@@ -15,7 +15,7 @@ export const ensureAuthUser = (
     token as string,
     process.env.SECRET_KEY as string,
     (err: any, decoded: any) => {
-      if (err) throw new AppError('Invalid token', err);
+      if (err) throw new AppError('Invalid token', 401);
       req.user = { id: decoded.sub };
       next();
     }
