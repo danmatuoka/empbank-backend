@@ -1,5 +1,10 @@
 import { DataSource } from 'typeorm';
 import 'dotenv/config';
+import { User } from './entities/user.entity';
+import { Transaction } from './entities/transaction.entity';
+import { createTables1675962613130 } from './migrations/1675962613130-createTables';
+
+createTables1675962613130;
 
 const AppDataSource = new DataSource(
   process.env.NODE_ENV === 'test'
@@ -18,8 +23,8 @@ const AppDataSource = new DataSource(
         database: process.env.POSTGRES_DB,
         logging: true,
         synchronize: false,
-        entities: ['src/entities/*.ts'],
-        migrations: ['src/migrations/*.ts'],
+        entities: [User, Transaction],
+        migrations: [createTables1675962613130],
       }
 );
 
