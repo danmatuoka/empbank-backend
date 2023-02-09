@@ -8,6 +8,6 @@ import { ensureAuthUser } from '../middlewares/ensureAuthUser.middleware';
 const userRoutes = Router();
 
 userRoutes.post('', userCreateController);
-userRoutes.get('', userListController);
+userRoutes.get('', ensureAuthUser, userListController);
 
 export default userRoutes;
