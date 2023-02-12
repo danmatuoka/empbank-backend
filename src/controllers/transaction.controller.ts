@@ -25,7 +25,29 @@ export const listTransactionController = async (
   req: Request,
   res: Response
 ) => {
-  const transactions = await listTransactionService(req.user.id);
+  const userId = req.user.id;
+  const baseUrl = req.baseUrl;
+  let { limit, offset, page } = req.query;
+
+  if (!page) {
+    page = '1';
+  }
+
+  if (!limit) {
+    limit = '5';
+  }
+
+  if (!offset) {
+    offset = '0';
+  }
+
+  const transactions = await listTransactionService(
+    userId,
+    baseUrl,
+    limit,
+    offset,
+    page
+  );
 
   return res.status(200).json(transactions);
 };
