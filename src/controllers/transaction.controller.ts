@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { ITransaction } from '../interfaces/transaction';
 import {
   createTransactionService,
+  listAllTransactionService,
   listTransactionService,
 } from '../services/transaction.service';
 
@@ -48,6 +49,17 @@ export const listTransactionController = async (
     offset,
     page
   );
+
+  return res.status(200).json(transactions);
+};
+
+export const listAllTransactionController = async (
+  req: Request,
+  res: Response
+) => {
+  const userId = req.user.id;
+
+  const transactions = await listAllTransactionService(userId);
 
   return res.status(200).json(transactions);
 };

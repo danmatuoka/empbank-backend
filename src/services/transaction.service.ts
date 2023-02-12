@@ -59,3 +59,21 @@ export const listTransactionService = async (
 
   return { count, page, transactions };
 };
+
+export const listAllTransactionService = async (userId: string) => {
+  const transactionRepository = AppDataSource.getRepository(Transaction);
+  const userRepository = AppDataSource.getRepository(User);
+  const owner = await userRepository.findOneBy({ id: userId });
+
+  if (!owner) throw new AppError('You do not have access', 403);
+
+  const transactions = await transactionRepository.find({
+    where: {
+      user: {
+        id: userId,
+      },
+    },
+  });
+
+  return transactions;
+};
