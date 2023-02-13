@@ -2,8 +2,7 @@ import { DataSource } from 'typeorm';
 import 'dotenv/config';
 import { User } from './entities/user.entity';
 import { Transaction } from './entities/transaction.entity';
-import { createTables1675962613130 } from './migrations/1675962613130-createTables';
-
+import { createTables1676305262185 } from './migrations/1676305262185-createTables';
 const AppDataSource = new DataSource(
   process.env.NODE_ENV === 'test'
     ? {
@@ -22,7 +21,7 @@ const AppDataSource = new DataSource(
         logging: true,
         synchronize: false,
         entities: [User, Transaction],
-        migrations: [createTables1675962613130],
+        migrations: [createTables1676305262185],
       }
 );
 

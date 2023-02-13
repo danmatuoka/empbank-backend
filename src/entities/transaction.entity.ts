@@ -15,7 +15,7 @@ export class Transaction {
   @Column({ length: 60 })
   title: string;
 
-  @Column({ length: 120, unique: true })
+  @Column({ length: 120 })
   value: string;
 
   @Column({ length: 120 })
