@@ -1,6 +1,6 @@
 ## Empbank API
 
-- Página de controle financeiro pessoal que permite aos usuários controlar suas finanças de maneira fácil e intuitiva.
+- Backend desenvolvido para página de controle financeiro pessoal que permite aos usuários controlar suas finanças de maneira fácil e intuitiva.
 
 ## Instalação
 - Clone o repositório
@@ -181,6 +181,14 @@ Response
 
   ```
   
+  
+  ## Tecnologias utilizadas
+  - Node
+  - Typescript
+  - Express
+  - TypeORM
+  - PostgreSQL
+  - Jest
   
   [⬆ Voltar ao topo](#Empbank-api)<br>
   
