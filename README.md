@@ -37,7 +37,7 @@ yarn test
 ## Endpoints
 ### Criar novo usuário
 
-`POST /users - status 201`
+`POST /user - status 201`
 
 Request
   
@@ -79,7 +79,7 @@ Response
   ### Rotas que necessitam de TOKEN
   ---------------------
   ### Listar usuário
-  `GET /users - status 200`
+  `GET /user - status 200`
   
   Response
   
